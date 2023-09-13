@@ -78,7 +78,7 @@ class GifMapperKtTest {
     }
 
     @Test
-    fun mapToRandomGif() {
+    fun `test RandomGifResponse mapper to RandomGif`() {
         val images = Images(
             downsized = Downsized(
                 height = "444",
@@ -123,7 +123,7 @@ class GifMapperKtTest {
         val dataModel = RandomGifResponse(
             randomGifData = data,
         )
-        val domainData =  dataModel.mapToRandomGif()
+        val domainData = dataModel.mapToRandomGif()
         assertEquals(dataModel.randomGifData.id, domainData.id)
         assertEquals(dataModel.randomGifData.images?.original?.url, domainData.url)
         assertEquals(dataModel.randomGifData.rating, domainData.rating)
