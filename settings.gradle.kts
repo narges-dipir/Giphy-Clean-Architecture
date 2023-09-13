@@ -3,6 +3,10 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { setUrl("https://jitpack.io") }
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -10,9 +14,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { setUrl("https://jitpack.io") }
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
     }
 }
 
 rootProject.name = "Picnic Test"
 include(":app")
- 
+include(":data")
