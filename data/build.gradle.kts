@@ -43,6 +43,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // Timber
@@ -62,6 +63,7 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.4")
     testImplementation("app.cash.turbine:turbine:0.12.1") // For Flow testing
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.10")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation("com.google.dagger:hilt-android-testing:2.48")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
