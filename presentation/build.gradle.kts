@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.narcis.presentation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -21,7 +21,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -95,7 +95,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-swiperefresh:0.25.1")
     implementation("com.google.accompanist:accompanist-placeholder-material:0.25.1")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
-    //glide
+    // glide
     implementation("com.github.bumptech.glide:glide:4.11.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.11.0")
     implementation("com.github.skydoves:landscapist-glide:2.2.7")
