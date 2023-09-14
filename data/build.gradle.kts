@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -67,6 +65,8 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation("com.google.dagger:hilt-android-testing:2.48")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    implementation("com.squareup.okhttp3:mockwebserver:4.11.0")
+    debugImplementation("androidx.test:monitor:1.6.0")
     // serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.6.0")
