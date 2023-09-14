@@ -70,7 +70,7 @@ fun SingleGifView(randomGif: RandomGif?, context: Context) {
                 modifier = Modifier
                     .size(130.dp)
                     .weight(0.5f),
-                text = ("+" + randomGif?.rating?.parsPgNumber()) ?: "?",
+                text = ("+" + (randomGif?.rating?.parsPgNumber() ?: "6")),
             )
         }
     }

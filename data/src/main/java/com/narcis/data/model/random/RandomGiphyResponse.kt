@@ -12,7 +12,7 @@ data class Data(
     @SerializedName("id")
     val id: String?,
     @SerializedName("rating")
-    val rating: String?,
+    val rating: String? = "pg-?",
     @SerializedName("slug")
     val slug: String?,
     @SerializedName("source")
