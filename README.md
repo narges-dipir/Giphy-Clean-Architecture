@@ -3,13 +3,16 @@
 this app has been implemented with clean architecture which is one the top standard architectures for android projects. Meets SOLID principles perfectly and testing modules easy. the main modules for this app are 3 modules, each modules implements one layer of the architecture: 
 
 1- Data
+
 2-Domain
+
 3-Presentation
 
 1- DATA: the main tools for the data module is :
 Hilt, Retroft, Gson, Junit, Mockk 
 
 there are mappers to implement loose coupling in code and several data class types for every purpose.
+
  2- DOMAIN: the main tools for domain module is :
 
 Hilt,  Junit, Mockk, Timber, Flow, Coroutines
