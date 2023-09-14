@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 rootProject.name = "Picnic Test"
 include(":app")
 include(":data")
+include(":domain")
