@@ -58,4 +58,5 @@ dependencies {
     testImplementation("app.cash.turbine:turbine:0.12.1") // For Flow testing
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.10")
 }
