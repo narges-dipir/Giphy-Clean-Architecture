@@ -28,6 +28,10 @@ in these layer we take advantage of jetpack compose by creating auto-darak & lig
 
 
 
-https://github.com/PicnicNext/picnic-android-narcis-dpr/assets/29674637/6fa49db7-03c8-48e6-b26d-3db934d78f75
+
+
+https://github.com/narcis-dpr/Giphy-Clean-Architecture/assets/29674637/ea26cb87-9f09-4bdb-99ba-7dbefb40a2c6
+
+
 
 
