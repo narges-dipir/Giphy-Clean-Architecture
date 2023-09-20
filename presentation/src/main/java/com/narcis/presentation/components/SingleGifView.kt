@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.narcis.presentation.model.RandomGif
 import com.narcis.presentation.theme.ApplicationTheme
-import com.narcis.presentation.theme.PicnicTestTheme
+import com.narcis.presentation.theme.GiphyTestTheme
 import com.narcis.presentation.theme.Shadow7
 import com.narcis.presentation.utiles.Constants
 import com.narcis.presentation.utiles.loadGif
@@ -79,7 +79,7 @@ fun SingleGifView(randomGif: RandomGif?, context: Context) {
 @Preview
 @Composable
 private fun Preview() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         SingleGifView(
             randomGif = RandomGif(
                 url = "https://media2.giphy.com/media/QZnfSw3fJT46mTiDEX/giphy.gif?cid=6df7b0fe1qoaalke0nrfor74jtit8gm75xcgkmc2bjepjl40&ep=v1_gifs_random&rid=giphy.gif&ct=g",

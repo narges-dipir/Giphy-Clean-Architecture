@@ -29,7 +29,7 @@ import com.narcis.presentation.components.GridGifView
 import com.narcis.presentation.components.SearchBar
 import com.narcis.presentation.components.SingleGifView
 import com.narcis.presentation.theme.ApplicationTheme
-import com.narcis.presentation.theme.PicnicTestTheme
+import com.narcis.presentation.theme.GiphyTestTheme
 import com.narcis.presentation.viewModel.GifSearchViewModel
 import com.narcis.presentation.viewModel.RandomGifViewModel
 import com.narcis.presentation.viewModel.event.RandomGifEvent
@@ -111,7 +111,7 @@ fun HomeScreen(
 @Composable
 @Preview
 private fun Preview() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         HomeScreen()
     }
 }

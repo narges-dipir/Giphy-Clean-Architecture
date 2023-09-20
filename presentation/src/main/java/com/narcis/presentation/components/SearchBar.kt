@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.narcis.presentation.navigation.Navigation
 import com.narcis.presentation.theme.ApplicationTheme
-import com.narcis.presentation.theme.PicnicTestTheme
+import com.narcis.presentation.theme.GiphyTestTheme
 import com.narcis.presentation.theme.gray01
 
 @Composable
@@ -162,7 +162,7 @@ fun SearchBar(
 @Composable
 @Preview
 private fun Preview() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         SearchBar(
             textValue = "search...",
             valueChange = {},
@@ -181,7 +181,7 @@ private fun Preview() {
 @Composable
 @Preview
 private fun PreviewSearchOnly() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         SearchBar(
             textValue = "search...",
             valueChange = {},
@@ -198,7 +198,7 @@ private fun PreviewSearchOnly() {
 @Composable
 @Preview
 private fun PreviewBackArrowOnly() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         SearchBar(
             textValue = "search...",
             valueChange = {},

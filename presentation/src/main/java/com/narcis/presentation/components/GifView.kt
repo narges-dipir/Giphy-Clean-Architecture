@@ -27,7 +27,7 @@ import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.narcis.presentation.model.RandomGif
 import com.narcis.presentation.navigation.Navigation
-import com.narcis.presentation.theme.PicnicTestTheme
+import com.narcis.presentation.theme.GiphyTestTheme
 import com.narcis.presentation.theme.Shadow0
 import com.narcis.presentation.theme.Shadow2
 import com.narcis.presentation.utiles.Constants.Place_Holder_Random_Gif_Url
@@ -97,7 +97,7 @@ fun GifView(
 @Preview
 @Composable
 private fun Preview() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         val context = LocalContext.current
         val randomGif = RandomGif(
             url = "https://media2.giphy.com/media/QZnfSw3fJT46mTiDEX/giphy.gif?cid=6df7b0fe1qoaalke0nrfor74jtit8gm75xcgkmc2bjepjl40&ep=v1_gifs_random&rid=giphy.gif&ct=g",

@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.narcis.picnic"
+    namespace = "com.narcis.giphy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.narcis.picnic"
+        applicationId = "com.narcis.giphy"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

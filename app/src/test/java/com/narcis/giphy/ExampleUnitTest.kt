@@ -1,4 +1,4 @@
-package com.narcis.picnic
+package com.narcis.giphy
 
 import org.junit.Test
 

@@ -21,7 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Picnic Test"
+rootProject.name = "Giphy Test"
 include(":app")
 include(":data")
 include(":domain")

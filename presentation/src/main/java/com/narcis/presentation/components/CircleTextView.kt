@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.narcis.presentation.theme.ApplicationTheme
-import com.narcis.presentation.theme.PicnicTestTheme
+import com.narcis.presentation.theme.GiphyTestTheme
 
 @Composable
 fun CircleTextView(
@@ -43,7 +43,7 @@ fun CircleTextView(
 @Preview
 @Composable
 private fun Preview() {
-    PicnicTestTheme {
+    GiphyTestTheme {
         CircleTextView(modifier = Modifier.size(84.dp), text = "+18")
     }
 }
