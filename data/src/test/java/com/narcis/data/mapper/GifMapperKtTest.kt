@@ -3,8 +3,8 @@ package com.narcis.data.mapper
 import com.github.davidepanidev.kotlinextensions.deserializeJsonFileFromSystemResources
 import com.github.davidepanidev.kotlinextensions.utils.serialization.SerializationManager
 import com.github.davidepanidev.kotlinextensions.utils.serialization.gson.GsonSerializationManager
-import com.narcis.data.GIF_OBJECT_ONE
-import com.narcis.data.GIF_OBJECT_TWO
+import com.narcis.data.GIF_OBJECT_SEARCH
+import com.narcis.data.GIF_OBJECT_RANDOM
 import com.narcis.data.model.random.RandomGif
 import com.narcis.data.model.random.RandomGifResponse
 import com.narcis.data.model.search.GiphyPagingResponse
@@ -16,9 +16,9 @@ import strikt.assertions.isEqualTo
 class GifMapperKtTest {
     private val deserializer: SerializationManager = GsonSerializationManager()
     private val giphySearchResponse: GiphyPagingResponse =
-        GIF_OBJECT_ONE.deserializeJsonFileFromSystemResources(deserializer)
+        GIF_OBJECT_SEARCH.deserializeJsonFileFromSystemResources(deserializer)
     private val giphyRandomResponse: RandomGifResponse =
-        GIF_OBJECT_TWO.deserializeJsonFileFromSystemResources(deserializer)
+        GIF_OBJECT_RANDOM.deserializeJsonFileFromSystemResources(deserializer)
 
     @Test
     fun `test GifObject mapper function to SearchGif`() {
