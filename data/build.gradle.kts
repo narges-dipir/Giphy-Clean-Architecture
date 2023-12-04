@@ -73,4 +73,8 @@ dependencies {
     // Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.46.1")
+
+    // test
+    implementation("com.github.davidepanidev:android-extensions:2.0")
+    implementation("com.github.davidepanidev:kotlin-extensions:2.0")
 }
