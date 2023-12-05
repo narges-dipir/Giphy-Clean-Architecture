@@ -1,25 +1,23 @@
 package com.narcis.domain.useCase
 
-import com.narcis.data.api.GiphyApi
 import com.narcis.data.model.random.RandomGif
 import com.narcis.data.repository.GifRepository
-import com.narcis.data.repository.GifRepositoryImpl
 import com.narcis.domain.common.Result
 import com.narcis.domain.di.DefaultDispatcherProvider
-import com.narcis.domain.model.RandomGifResult
+import com.narcis.domain.mapper.mapToRandomGifResult
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
-import timber.log.Timber
+import strikt.api.expectThat
+import strikt.assertions.isEqualTo
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class RandomGifUseCaseTest {
-
-    @MockK
-    private lateinit var giphyApi: GiphyApi
 
     @MockK
     private lateinit var gifRepository: GifRepository
@@ -32,46 +30,48 @@ class RandomGifUseCaseTest {
     fun setUp() {
         MockKAnnotations.init(this)
         dispatcherProvider = DefaultDispatcherProvider()
-        gifRepository = GifRepositoryImpl(giphyApi = giphyApi)
         randomGifUseCase = RandomGifUseCase(gifRepository, dispatcherProvider)
     }
 
     @Test
-    fun `test executing RandomGifUseCase returns a RandomGifResult`(): Unit = runBlocking {
-        val mockRandomGif = RandomGif(
+    fun `invoke with Success Response Returns Success`(): Unit = runTest {
+        val expectedRandomGif = RandomGif(
             id = "1",
             url = "https://giphy.com/gifs/AgenceLusso-football-soccer-foot-6mm6mUUExaAecMAvMq",
             title = "sample gif_title",
-            rating = "pg-15"
+            rating = "pg-15",
         )
-        val expectedRandomGifResult = Result.Success(
-            RandomGifResult(
-                id = "1",
-                url = "https://giphy.com/gifs/AgenceLusso-football-soccer-foot-6mm6mUUExaAecMAvMq",
-                title = "sample gif_title",
-                rating = "pg-15"
-            )
+
+        coEvery { gifRepository.getRandomGif() } returns expectedRandomGif
+
+        val actualResult = randomGifUseCase(Unit)
+    }
+
+    @Test
+    fun `random gif use case emits loading and then success`() = runTest {
+        val randomGif = RandomGif(
+            id = "1",
+            url = "https://giphy.com/gifs/AgenceLusso-football-soccer-foot-6mm6mUUExaAecMAvMq",
+            title = "sample gif_title",
+            rating = "pg-15",
         )
-        val expectedResult = expectedRandomGifResult.data
-        coEvery { gifRepository.getRandomGif() } returns mockRandomGif
+        coEvery { gifRepository.getRandomGif() } returns randomGif
 
-        val result = randomGifUseCase(Unit)
+        val results = randomGifUseCase(Unit).toList()
 
-        result.collect { rst ->
-            when (rst) {
-                is Result.Error -> {
-                    Timber.e("Test Error", rst.exception.toString())
-                }
+        assertTrue(results[0] is Result.Loading)
 
-                Result.Loading -> {
-                    assertEquals(Result.Loading, rst)
-                }
+        val successResult = results[1] as Result.Success
+        expectThat(successResult.data).isEqualTo(randomGif.mapToRandomGifResult())
+    }
 
-                is Result.Success -> {
-                    assertEquals(rst.data, expectedResult)
-                }
-            }
-        }
-
+    @Test
+    fun `random gif use case emits loading and then error on exception`() = runTest {
+        val exception = RuntimeException("Error")
+        coEvery { gifRepository.getRandomGif() } throws exception
+        val results = randomGifUseCase(Unit).toList()
+        assertTrue(results[0] is Result.Loading)
+        val errorResult = results[1] as Result.Error
+        assertEquals(exception, errorResult.exception)
     }
 }

@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-
 class RandomGifUseCase @Inject constructor(
     private val gifRepository: GifRepository,
     dispatcher: DefaultDispatcherProvider,
@@ -20,10 +19,8 @@ class RandomGifUseCase @Inject constructor(
             emit(Result.Loading)
             val result = gifRepository.getRandomGif().mapToRandomGifResult()
             emit(Result.Success(result))
-
         } catch (e: Exception) {
             emit(Result.Error(e))
         }
-
     }
 }
