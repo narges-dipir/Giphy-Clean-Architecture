@@ -94,6 +94,8 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.6.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.1")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.1")
+    implementation("com.github.davidepanidev:android-extensions:2.1.1")
+    implementation("com.github.davidepanidev:kotlin-extensions:2.0.2")
     // Accompanist
     implementation("com.google.accompanist:accompanist-swiperefresh:0.25.1")
     implementation("com.google.accompanist:accompanist-placeholder-material:0.25.1")

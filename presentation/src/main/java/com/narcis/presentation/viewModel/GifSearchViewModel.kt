@@ -43,7 +43,7 @@ class GifSearchViewModel @Inject constructor(
         viewModelScope.launch {
             searchGifUseCase(state.searchQuery).collect { result ->
                 when (result) {
-                    is Result.Error -> {
+                    is com.narcis.domain.common.Result.Error -> {
                         state = state.copy(isLoading = false, error = result.exception.toString())
                     }
 

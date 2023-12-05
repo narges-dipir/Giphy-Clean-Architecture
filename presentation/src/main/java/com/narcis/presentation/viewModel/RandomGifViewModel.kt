@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.narcis.domain.common.Result
+import com.narcis.domain.common.data
 import com.narcis.domain.useCase.RandomGifUseCase
 import com.narcis.presentation.mapper.mapToRandomGif
 import com.narcis.presentation.utiles.Constants.Random_Gif_TimOut

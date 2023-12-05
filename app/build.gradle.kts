@@ -73,4 +73,13 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.44.2")
 
     implementation(project(mapOf("path" to ":presentation")))
+    //test
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("io.strikt:strikt-core:0.34.1")
+    testImplementation("io.mockk:mockk:1.13.4")
+    testImplementation("app.cash.turbine:turbine:0.12.1") // For Flow testing
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.10")
+
 }
