@@ -17,6 +17,8 @@ import com.narcis.presentation.utiles.loadGif
 import org.junit.Rule
 import org.junit.Test
 
+
+// doesn't pass
 class GifViewKtTest {
 
     @get:Rule

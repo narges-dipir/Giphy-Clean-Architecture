@@ -26,6 +26,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -90,7 +92,8 @@ fun SearchBar(
             OutlinedTextField(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(end = 8.dp, top = 24.dp, bottom = 16.dp, start = 8.dp),
+                    .padding(end = 8.dp, top = 24.dp, bottom = 16.dp, start = 8.dp)
+                    .semantics { contentDescription = "search input field" },
                 value = textValue,
                 onValueChange = valueChange,
                 keyboardOptions = KeyboardOptions.Default.copy(
@@ -144,7 +147,8 @@ fun SearchBar(
             )
         } else if (haseTitle) {
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .semantics { contentDescription = "title row" },
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
             ) {
