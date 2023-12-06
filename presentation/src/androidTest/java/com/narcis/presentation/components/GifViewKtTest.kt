@@ -16,7 +16,6 @@ import com.narcis.presentation.utiles.Constants
 import com.narcis.presentation.utiles.loadGif
 import org.junit.Rule
 import org.junit.Test
-import kotlin.math.roundToInt
 
 class GifViewKtTest {
 
@@ -37,7 +36,6 @@ class GifViewKtTest {
             context = testContext,
             imageUrl = randomGif.url ?: Constants.Place_Holder_Random_Gif_Url,
             thumbnailUrl = randomGif.downsizedUrl ?: Constants.Place_Holder_Random_Gif_Url,
-            override = 135.dp.value.roundToInt(),
         )
         composeTestRule.setContent {
             GiphyTestTheme {
