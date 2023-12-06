@@ -68,9 +68,7 @@ fun GridGifView(
                         ),
                         requestBuilder = requestBuilder,
                         navController = navController,
-                    ) {
-                        println("*** hi")
-                    }
+                    )
                 }
             }
         }

@@ -101,7 +101,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-placeholder-material:0.25.1")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
     // glide
-    implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.11.0")
     implementation("com.github.skydoves:landscapist-glide:2.2.7")
     implementation("com.github.bumptech.glide:okhttp3-integration:4.16.0")

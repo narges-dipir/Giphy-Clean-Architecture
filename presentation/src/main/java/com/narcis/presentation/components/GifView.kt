@@ -47,7 +47,6 @@ fun GifView(
     randomGif: RandomGif?,
     requestBuilder: RequestBuilder<GifDrawable>,
     navController: NavController? = null,
-    onClick: () -> Unit = {},
 ) {
     val brush = Brush.horizontalGradient(colors = colors)
     Box(
@@ -107,8 +106,8 @@ private fun Preview() {
         )
         val requestBuilder = loadGif(
             context = context,
-            imageUrl = randomGif?.url ?: Place_Holder_Random_Gif_Url,
-            thumbnailUrl = randomGif?.downsizedUrl ?: Place_Holder_Random_Gif_Url,
+            imageUrl = randomGif.url ?: Place_Holder_Random_Gif_Url,
+            thumbnailUrl = randomGif.downsizedUrl ?: Place_Holder_Random_Gif_Url,
             override = 135.dp.value.roundToInt(),
         )
         GifView(
