@@ -96,6 +96,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.1")
     implementation("com.github.davidepanidev:android-extensions:2.1.1")
     implementation("com.github.davidepanidev:kotlin-extensions:2.0.2")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.5.3")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.37")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.37")
     // Accompanist
     implementation("com.google.accompanist:accompanist-swiperefresh:0.25.1")
     implementation("com.google.accompanist:accompanist-placeholder-material:0.25.1")
